@@ -1,0 +1,226 @@
+body {
+  font-family: Inter, sans-serif;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* 🌸 Tema claro */
+:root {
+  --bg-color: #fffafc;
+  --text-color: #333;
+  --primary-color: #ef92ab;
+  --button-bg: linear-gradient(135deg, #ffd6a5, #ffb6c1, #bde0fe);
+  --button-text: #fff;
+  --input-bg: #fff2f2;
+  --input-text: #000;
+}
+
+/* 🌙 Tema escuro fofo */
+body.dark {
+  --bg-color: #2a1f2d;
+  --text-color: #ffe6f2;
+  --primary-color: #ffb6d9;
+  --button-bg: linear-gradient(135deg, #b567a4, #814b7a, #444);
+  --button-text: #fff;
+  --input-bg: #3c2f3b;
+  --input-text: #fff;
+}
+
+/* Barra lateral */
+.perfil {
+  background: rgb(241, 236, 230);
+  color: rgb(239, 146, 171);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+  z-index: 5;
+}
+
+body.dark .perfil {
+  background: #3b2a38;
+}
+
+.perfil.hidden {
+  transform: translateX(-100%);
+}
+
+/* Ícones sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.social-icons img {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
+
+/* Botões gerais */
+button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  background: rgb(245, 242, 239);
+  padding: 15px 0;
+  border-radius: 0 0 15px 15px;
+}
+
+body.dark .navbar {
+  background: #3b2a38;
+}
+
+.navbar button {
+  margin: 0 10px;
+  padding: 10px 28px;
+}
+
+/* Logo central */
+.logoo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+/* Login */
+#login-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 182, 193, 0.35);
+  backdrop-filter: blur(5px);
+  z-index: 99;
+}
+
+#login-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  text-align: center;
+  z-index: 100;
+}
+
+#login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--input-text);
+}
+
+
+
+/* Posts */
+.atividade {
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  background: var(--input-bg);
+  color: var(--input-text);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.atividade input[type="text"] {
+  width: 80%;
+  padding: 8px 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: var(--input-bg);
+  color: var(--input-text);
+}
+
+/* 🩷 imagens redondas */
+.perfil .usuario-foto {
+  width: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.atividade .usuario-foto {
+  width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Like */
+.like-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.like-btn:hover {
+  transform: scale(1.2);
+}
+
+.like-btn.ativo img {
+  filter: hue-rotate(330deg) brightness(1.2) saturate(2);
+  animation: pulsar 0.3s ease;
+}
+
+@keyframes pulsar {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}

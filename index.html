@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Chiitalk</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Botão para abrir a barra lateral -->
+  <button class="toggle-btn" onclick="toggleBarra()">=</button>
+
+  <!-- Barra lateral de perfil -->
+  <aside class="perfil hidden">
+    <button class="fechar-btn" onclick="toggleBarra()">x</button>
+    <img src="img/logo.jpeg" class="logo" alt="logo">
+
+    <div class="grid">
+      <div id="iconn">
+        <img src="img/usuario01.jpg" class="usuario-foto" alt="usuário">
+      </div>
+      <h2>HardWare</h2>
+      <p>@hardwire</p>
+
+      <button class="login" onclick="mostrarLogin()">Login</button>
+      <button id="theme-toggle">🌙 Tema fofo</button>
+
+      <footer>
+        <p>AmandinhaTech.corp</p>
+        <div id="silly" class="social-icons">
+          <img src="img/instagram.png" alt="instagram">
+          <img src="img/twitter.png" alt="twitter">
+          <img src="img/tiktok.png" alt="tiktok">
+        </div>
+        <p>Copyright - 2024</p>
+      </footer>
+    </div>
+  </aside>
+
+  <!-- Logo central -->
+  <div class="logoo">
+    <img src="img/logoo.png" alt="logo principal">
+  </div>
+
+  <!-- Fundo translúcido do login -->
+  <div id="login-overlay" onclick="fecharLogin()"></div>
+
+  <!-- Caixa de login -->
+  <div id="login-container">
+    <h2>Login</h2>
+    <input type="text" placeholder="Usuário" id="usuario">
+    <input type="password" placeholder="Senha" id="senha">
+    <button onclick="logar()">Entrar</button>
+    <button class="fechar-login" onclick="fecharLogin()">Fechar</button>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <main class="main">
+    <nav class="navbar">
+      <button>Home</button>
+      <button>About</button>
+      <button>Characters</button>
+    </nav>
+
+    <section class="atividade">
+      <!-- Post 1 -->
+      <article class="atividade" data-id="post1">
+        <img src="img/usuario02.jpg" class="usuario-foto" alt="Usuário 1">
+        <h3>Uwagi</h3>
+        <p>@una</p>
+        <h2>una</h2>
+        <button class="like-btn"><img src="img/coracao.svg" width="20" alt="like"></button>
+        <span class="like-count">0</span>
+        <div class="comentarios"></div>
+        <input type="text" class="comentario-input" placeholder="Escrever comentário...">
+      </article>
+
+      <!-- Post 2 -->
+      <article class="atividade" data-id="post2">
+        <img src="img/usuario03.jpg" class="usuario-foto" alt="Usuário 2">
+        <h3>Xiitawa</h3>
+        <p>@chiiswag</p>
+        <h2>uwa</h2>
+        <div><img src="img/post1.jpg" width="200" alt="Post imagem"></div>
+        <button class="like-btn"><img src="img/coracao.svg" width="20" alt="like"></button>
+        <span class="like-count">0</span>
+        <div class="comentarios"></div>
+        <input type="text" class="comentario-input" placeholder="Escrever comentário...">
+      </article>
+    </section>
+  </main>
+</body>
+</html>
